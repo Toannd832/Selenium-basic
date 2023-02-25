@@ -3,4 +3,4 @@
 ![alt](description.png)
 ![alt](pom.png)
 # You can use this .bat file to run the project immediately
-![alt](file_runoutsideIDE)
+![alt](file_runoutsideIDE.png)
