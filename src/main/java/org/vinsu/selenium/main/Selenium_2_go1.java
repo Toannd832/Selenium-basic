@@ -19,6 +19,8 @@ public class Selenium_2_go1 {
     //throws => nem' cho he dieu hanh(WINDOWS) hứng
     public static void main(String[] args) throws InterruptedException {
 //        playWithGoogle();
+        System.out.println("Please wait 3s to launch the browser...");
+        Thread.sleep(3000);
         playWithGooleSearch();
     }
     
@@ -32,7 +34,7 @@ public class Selenium_2_go1 {
         myBrowser.manage().window().maximize();
         myBrowser.get("https://www.google.com/");
 
-        // định vị ô search để nhập keyword
+        //định vị ô search để nhập keyword
         //myBrowser đã có được toàn bộ thẻ đã được render trên trình duyệt
         //viết câu query để select 1 tag bất kì theo id, name, css, selector, xPath
         //xPathlà ngầu nhất luồn tìm được 1 tag bất kì trong 1 mớ thẻ lồng nhau
@@ -42,7 +44,7 @@ public class Selenium_2_go1 {
         
         searchBox.sendKeys("Nguyen Duc Toan");
         searchBox.submit();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         myBrowser.quit();
     }
 
@@ -57,18 +59,20 @@ public class Selenium_2_go1 {
         //2.Báo với máy ảo Java có file driver.exe => file này chứa 1 đống CLASS 
         //=> giúp tương tác với trình duyệt.DRIVER
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-        //Lệnh này giống Class.forName() JDBC
 
+        //Lệnh này giống Class.forName() JDBC
         //làm thêm 1 vài trò cáu hình trước khi trình duyệt xuất hiện
+        //LAM THEM NEU MUON GIUA BUOC 2 VA 3
         ChromeOptions opt = new ChromeOptions();
         opt.addArguments("--lang=vi-VN");
         opt.addArguments("--incognition");
 
-        //new 1 object trong HEAP => ton tai trong RAM
+        //3. new 1 object trong HEAP => ton tai trong RAM
         myBrowser = new ChromeDriver(opt); // ton RAM va` tao ra 1 tab trinh duyet
         //Mặc định trình duyệt đã new chiếm 1/2 màn hình
         // Phóng to bản chất là gọi hành động của object myBrowser
         myBrowser.manage().window().maximize();
+        //4. GET URL
         myBrowser.get("https://www.youtube.com/");
 
         //EP CPU ngưng đọng 10s
